@@ -131,9 +131,9 @@ class TextData():
 
         # text_vars=["title", "short_description", "need_statement", "essay"]
         text_vars = "essay" # only select the essay column
-        train_input = tokenize(train_df[ text_vars ] )
-        val_input = tokenize(val_df[ text_vars ] )
-        test_input = tokenize(test_df[ text_vars ] )
+        train_input = tokenize( train_df[ text_vars ].values )
+        val_input = tokenize(val_df[ text_vars ].values )
+        test_input = tokenize(test_df[ text_vars ].values )
 
         target_var = "is_exciting"
         train_target = train_df[ target_var ]
@@ -197,7 +197,7 @@ class TextData():
 
 if __name__ == "__main__":
     data = TextData(data_src='all_data')
-    print(data.fetch_data(path='preprocessall.csv'))
+    print(data.fetch_data(path='KDD2014\data\essays_outcome.csv'))
     len_lst = data.train_set.get_field('seq_len')
     plt.hist(len_lst,bins=500)
     plt.show()
