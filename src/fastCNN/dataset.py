@@ -4,6 +4,7 @@ import time
 import math
 import os.path as op
 from os.path import join as opj
+import pickle as pkl
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -131,8 +132,11 @@ class TextData():
 
         # text_vars=["title", "short_description", "need_statement", "essay"]
         text_vars = "essay" # only select the essay column
+        print("tokenize train set")
         train_input = tokenize( train_df[ text_vars ].values )
+        print("tokenize val set")
         val_input = tokenize(val_df[ text_vars ].values )
+        print("tokenize test set")
         test_input = tokenize(test_df[ text_vars ].values )
 
         target_var = "is_exciting"
@@ -196,13 +200,19 @@ class TextData():
         return self.train_size, self.val_size ,self.test_size
 
 if __name__ == "__main__":
+    data_dir = 'KDD2014\data'
     data = TextData(data_src='all_data')
-    print(data.fetch_data(path='KDD2014\data\essays_outcome.csv'))
+    print(data.fetch_data(path=opj(data_dir,'essays_outcome.csv')) )
     len_lst = data.train_set.get_field('seq_len')
     plt.hist(len_lst,bins=500)
     plt.show()
     plt.savefig()
     print("Test done.")
+    
+    print('Saving vocab(TextData)...')
+    with open(os.path.join(data_dir, 'vocab.data'), 'wb') as fout:
+        pkl.dump(data, fout)
+    print('Done with preparing!')
     
 
 
