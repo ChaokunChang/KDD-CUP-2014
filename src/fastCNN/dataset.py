@@ -126,6 +126,9 @@ class TextData():
     def fetch_csv(self,path=None):
         print("Loading data from {} .......".format(path))
         df = pd.read_csv(path,header=0)
+        df["y"] = 0
+        df["y"][df["is_exciting"]=="t"] = 1
+
         train_df = df[df['split'] == 'train']
         val_df = df[df['split'] == 'val']
         test_df = df[df['split'] == 'test']
@@ -135,14 +138,14 @@ class TextData():
         print("tokenize train set")
         train_input = tokenize( train_df[ text_vars ].values )
         print("tokenize val set")
-        val_input = tokenize(val_df[ text_vars ].values )
+        val_input = tokenize( val_df[ text_vars ].values )
         print("tokenize test set")
-        test_input = tokenize(test_df[ text_vars ].values )
+        test_input = tokenize( test_df[ text_vars ].values )
 
-        target_var = "is_exciting"
-        train_target = train_df[ target_var ]
-        val_target = val_df[ target_var ]
-        test_target = test_df[ target_var ]
+        target_var = "y"
+        train_target = train_df[ target_var ].values
+        val_target = val_df[ target_var ].values
+        test_target = test_df[ target_var ].values
 
         assert (self.class_num == 2)
 

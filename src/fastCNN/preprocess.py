@@ -31,6 +31,7 @@ df = df[df["split"]!="none"]
 df["y"] = 0
 df["y"][df["is_exciting"]=="t"] = 1
 text_vars=["title", "short_description", "need_statement", "essay"]
-df = df[text_vars+["split","is_exciting","projectid"]]
+df = df[text_vars+["split","is_exciting","projectid","y"]]
+
 df.to_csv(combined_file, index=False)
 print("Done.")
