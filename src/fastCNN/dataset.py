@@ -126,8 +126,6 @@ class TextData():
     def fetch_csv(self,path=None):
         print("Loading data from {} .......".format(path))
         df = pd.read_csv(path,header=0)
-        df["y"] = 0
-        df["y"][df["is_exciting"]=="t"] = 1
 
         train_df = df[df['split'] == 'train']
         val_df = df[df['split'] == 'val']
