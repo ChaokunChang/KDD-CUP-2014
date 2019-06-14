@@ -197,6 +197,6 @@ if __name__ == "__main__":
     print("Test done.")
 
     print('Saving vocab(TextData)...')
-    with open(os.path.join(data_dir, 'vocab.data'), 'wb') as fout:
+    with open(os.path.join(data_dir, 'vocab/vocab.data'), 'wb') as fout:
         pkl.dump(data, fout)
     print('Done with preparing!')
