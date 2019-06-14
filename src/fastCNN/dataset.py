@@ -26,6 +26,7 @@ def combine_whitespace(s):
 
 
 def tokenize(data):
+    print("Tokenizing data num:{}".format(len(data)))
     new_data = []
     for i in range(len(data)):
         text = data[i]
@@ -188,7 +189,7 @@ if __name__ == "__main__":
     data = TextData(data_src='all_data')
     print(data.fetch_data(path=opj(data_dir, 'suboutcome.csv')))
     len_lst = data.train_set.get_field('seq_len')
-    plt.hist(len_lst, bins=500)
+    plt.hist(len_lst, bins=100)
     plt.title("Essay_Length_distribution")
     # plt.show()
     plt.savefig("Essay_Length_distribution.png")
