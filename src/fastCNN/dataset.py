@@ -33,6 +33,9 @@ def tokenize(data):
             print("Empty text.{0}".format(i))
         elif text is None:
             print("None type text.")
+        elif not isinstance(text,str):
+            print("ATTENTION TYPE:{}".format(text))
+            text = str(text)
         newtext = ""
         for c in text:
             if c not in string.punctuation:
