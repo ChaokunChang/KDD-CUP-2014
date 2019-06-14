@@ -81,7 +81,7 @@ def parse_args():
                                 help='max length of passage')
 
     path_settings = parser.add_argument_group('path settings')
-    path_settings.add_argument('--data_src', default='20news',
+    path_settings.add_argument('--data_src', default='all_data',
                                help='the data source that will be loaded in prepare part.')
     path_settings.add_argument('--vocab_dir', default='../data/vocab/',
                                help='the dir to save vocabulary')

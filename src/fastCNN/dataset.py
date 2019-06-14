@@ -7,6 +7,7 @@ from os.path import join as opj
 import pickle as pkl
 
 import matplotlib.pyplot as plt
+plt.switch_backend('agg')
 import numpy as np
 import pandas as pd
 import torch
@@ -185,9 +186,10 @@ class TextData():
 
 
 if __name__ == "__main__":
-    data_dir = 'KDD2014\data'
+    data_dir = '../../data'
     data = TextData(data_src='all_data')
-    print(data.fetch_data(path=opj(data_dir, 'suboutcome.csv')))
+    # print(data.fetch_data(path=opj(data_dir, 'suboutcome.csv')))
+    print(data.fetch_data(path=opj(data_dir, 'essays_outcome.csv')))
     len_lst = data.train_set.get_field('seq_len')
     plt.hist(len_lst, bins=100)
     plt.title("Essay_Length_distribution")
@@ -196,6 +198,6 @@ if __name__ == "__main__":
     print("Test done.")
 
     print('Saving vocab(TextData)...')
-    with open(os.path.join(data_dir, 'vocab.data'), 'wb') as fout:
+    with open(os.path.join(data_dir, 'vocab/vocab.data'), 'wb') as fout:
         pkl.dump(data, fout)
     print('Done with preparing!')
