@@ -184,7 +184,7 @@ class TextData():
 
 
 if __name__ == "__main__":
-    data_dir = 'KDD2014\data'
+    data_dir = '../../data'
     data = TextData(data_src='all_data')
     print(data.fetch_data(path=opj(data_dir, 'suboutcome.csv')))
     len_lst = data.train_set.get_field('seq_len')
