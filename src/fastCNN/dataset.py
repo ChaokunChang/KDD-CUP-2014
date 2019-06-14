@@ -74,7 +74,7 @@ def tokenize(data):
             else:
                 newtext += ' '
         newtext = combine_whitespace(newtext.lower())
-        if newtext is None:
+        if newtext is not None:
             new_data.append(newtext)
     return new_data
 
@@ -203,11 +203,12 @@ class TextData():
 if __name__ == "__main__":
     data_dir = 'KDD2014\data'
     data = TextData(data_src='all_data')
-    print(data.fetch_data(path=opj(data_dir,'essays_outcome.csv')) )
+    print(data.fetch_data(path=opj(data_dir,'suboutcome.csv')) )
     len_lst = data.train_set.get_field('seq_len')
     plt.hist(len_lst,bins=500)
-    plt.show()
-    plt.savefig()
+    plt.title("Essay_Length_distribution")
+    # plt.show()
+    plt.savefig("Essay_Length_distribution.png")
     print("Test done.")
     
     print('Saving vocab(TextData)...')
