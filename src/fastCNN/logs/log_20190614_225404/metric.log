@@ -1,0 +1,12 @@
+{"metric": {"AccuracyMetric": {"acc": 0.819672}, "step": 3, "epoch": 1}}
+Step:3	{"metric": {"AccuracyMetric": {"acc": 0.819672}, "step": 3, "epoch": 1}, "step": 3, "epoch": 1}
+Step:3	{"metric": {"test": {"AccuracyMetric": {"acc": 1.0}}}, "step": 3, "epoch": 1}
+{"metric": {"test": {"AccuracyMetric": {"acc": 1.0}}}}
+Step:6	{"metric": {"AccuracyMetric": {"acc": 0.819672}}, "step": 6, "epoch": 2}
+Step:6	{"metric": {"test": {"AccuracyMetric": {"acc": 1.0}}}, "step": 6, "epoch": 2}
+Step:9	{"metric": {"AccuracyMetric": {"acc": 0.819672}}, "step": 9, "epoch": 3}
+Step:9	{"metric": {"test": {"AccuracyMetric": {"acc": 1.0}}}, "step": 9, "epoch": 3}
+Step:12	{"metric": {"AccuracyMetric": {"acc": 0.819672}}, "step": 12, "epoch": 4}
+Step:12	{"metric": {"test": {"AccuracyMetric": {"acc": 1.0}}}, "step": 12, "epoch": 4}
+Step:15	{"metric": {"AccuracyMetric": {"acc": 0.819672}}, "step": 15, "epoch": 5}
+Step:15	{"metric": {"test": {"AccuracyMetric": {"acc": 1.0}}}, "step": 15, "epoch": 5}

@@ -1,0 +1,22 @@
+{"metric": {"AccuracyMetric": {"acc": 0.89071}, "step": 4459, "epoch": 1}}
+Step:4459	{"metric": {"AccuracyMetric": {"acc": 0.89071}, "step": 4459, "epoch": 1}, "step": 4459, "epoch": 1}
+Step:4459	{"metric": {"test": {"AccuracyMetric": {"acc": 1.0}}}, "step": 4459, "epoch": 1}
+{"metric": {"test": {"AccuracyMetric": {"acc": 1.0}}}}
+Step:8918	{"metric": {"AccuracyMetric": {"acc": 0.89071}}, "step": 8918, "epoch": 2}
+Step:8918	{"metric": {"test": {"AccuracyMetric": {"acc": 1.0}}}, "step": 8918, "epoch": 2}
+Step:13377	{"metric": {"AccuracyMetric": {"acc": 0.89071}}, "step": 13377, "epoch": 3}
+Step:13377	{"metric": {"test": {"AccuracyMetric": {"acc": 0.999977}}}, "step": 13377, "epoch": 3}
+Step:17836	{"metric": {"AccuracyMetric": {"acc": 0.889704}}, "step": 17836, "epoch": 4}
+Step:17836	{"metric": {"test": {"AccuracyMetric": {"acc": 0.998481}}}, "step": 17836, "epoch": 4}
+Step:22295	{"metric": {"AccuracyMetric": {"acc": 0.889104}}, "step": 22295, "epoch": 5}
+Step:22295	{"metric": {"test": {"AccuracyMetric": {"acc": 0.997652}}}, "step": 22295, "epoch": 5}
+Step:26754	{"metric": {"AccuracyMetric": {"acc": 0.876974}}, "step": 26754, "epoch": 6}
+Step:26754	{"metric": {"test": {"AccuracyMetric": {"acc": 0.978524}}}, "step": 26754, "epoch": 6}
+Step:31213	{"metric": {"AccuracyMetric": {"acc": 0.884715}}, "step": 31213, "epoch": 7}
+Step:31213	{"metric": {"test": {"AccuracyMetric": {"acc": 0.990931}}}, "step": 31213, "epoch": 7}
+Step:35672	{"metric": {"AccuracyMetric": {"acc": 0.884668}}, "step": 35672, "epoch": 8}
+Step:35672	{"metric": {"test": {"AccuracyMetric": {"acc": 0.991023}}}, "step": 35672, "epoch": 8}
+Step:40131	{"metric": {"AccuracyMetric": {"acc": 0.873552}}, "step": 40131, "epoch": 9}
+Step:40131	{"metric": {"test": {"AccuracyMetric": {"acc": 0.972125}}}, "step": 40131, "epoch": 9}
+Step:44590	{"metric": {"AccuracyMetric": {"acc": 0.860643}}, "step": 44590, "epoch": 10}
+Step:44590	{"metric": {"test": {"AccuracyMetric": {"acc": 0.953388}}}, "step": 44590, "epoch": 10}

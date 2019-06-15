@@ -4,8 +4,10 @@ import pickle
 import argparse
 import logging
 import fitlog
-sys.path.append('../')
+import numpy as np
+import pandas as pd
 import torch
+from torch.autograd import Variable
 from gensim.models import word2vec
 from gensim.test.utils import datapath, get_tmpfile
 from gensim.models import KeyedVectors
@@ -14,12 +16,13 @@ from gensim.scripts.glove2word2vec import glove2word2vec
 from sklearn.decomposition import TruncatedSVD
 
 from fastNLP.models import CNNText,STSeqCls
-from fastNLP import Trainer,Tester,Batch,Const
+from fastNLP import Trainer,Tester,Batch
 from fastNLP.core.losses import CrossEntropyLoss
 from fastNLP.core.metrics import AccuracyMetric
 from fastNLP.core import optimizer as fastnlp_optim
-from fastNLP.io import EmbedLoader
+from fastNLP.io import EmbedLoader,dataset_loader
 from fastNLP.core.callback import FitlogCallback,EarlyStopCallback
+from fastNLP.core.const import Const as C
 from copy import deepcopy
 
 
@@ -37,12 +40,14 @@ def parse_args():
     parser = argparse.ArgumentParser('PRML assignment4')
     parser.add_argument('--prepare', action='store_true',
                         help='create the directories, prepare the vocabulary and embeddings')
+    parser.add_argument('--show_data', action='store_true',
+                        help='show data')
     parser.add_argument('--train', action='store_true',
                         help='train the model')
     parser.add_argument('--pretrain', action='store_true',
                         help='pretrain the model using pretrain_model')
-    # parser.add_argument('--predict', action='store_true',
-    #                     help='predict the answers for test set with trained model')
+    parser.add_argument('--predict', action='store_true',
+                        help='predict the answers for test set with trained model')
     parser.add_argument('--cuda', action='store_true',
                         help='using cuda')
     parser.add_argument('--gpu', type=str, default='0',
@@ -63,7 +68,7 @@ def parse_args():
                                 help='train batch size')
     train_settings.add_argument('--epochs', type=int, default=10,
                                 help='train epochs')
-    train_settings.add_argument('--patience', type=int, default=100,
+    train_settings.add_argument('--patience', type=int, default=10,
                                 help='patience of early stop')
 
     model_settings = parser.add_argument_group('model settings')
@@ -83,17 +88,19 @@ def parse_args():
     path_settings = parser.add_argument_group('path settings')
     path_settings.add_argument('--data_src', default='all_data',
                                help='the data source that will be loaded in prepare part.')
-    path_settings.add_argument('--vocab_dir', default='../data/vocab/',
+    path_settings.add_argument('--vocab_dir', default='../../data/vocab/',
                                help='the dir to save vocabulary')
     path_settings.add_argument('--vocab_data', default='vocab.data',
                                help='the file that stored the vocab(and the file to save)')
+    path_settings.add_argument('--model_dir', default='../../data/models/',
+                               help='the dir to store models')
     path_settings.add_argument('--model_suffix', default='default',
                                help='the dir to store models')
-    path_settings.add_argument('--model_dir', default='../data/models/',
-                               help='the dir to store models')
-    path_settings.add_argument('--result_dir', default='../data/results/',
+    path_settings.add_argument('--reload_model_name', default='best_LSTMText_accuracy_2019-06-14-04-01-48',
+                               help='the name of the store models')
+    path_settings.add_argument('--result_dir', default='../../data/results/',
                                help='the dir to output the results')
-    path_settings.add_argument('--prepare_dir', default='../data/prepare/',
+    path_settings.add_argument('--prepare_dir', default='../../data/prepare/',
                                help='the dir to store the prepared data such as word2vec')
     path_settings.add_argument('--log_path',default='./run_records.log',
                                help='path of the log file. If not set, logs are printed to console')
@@ -193,24 +200,28 @@ def pretrain_embedding(args):
     else:
         print("No pretrain model will be used.")
 
+
 def train(args):
     text_data = TextData()
     with open(os.path.join(args.vocab_dir, args.vocab_data), 'rb') as fin:
         text_data = pickle.load(fin)
     vocab_size = text_data.vocab_size
     class_num = text_data.class_num
+    # class_num = 1
     seq_len = text_data.max_seq_len
     print("(vocab_size,class_num,seq_len):({0},{1},{2})".format(vocab_size,class_num,seq_len))
 
     train_data = text_data.train_set
-    test_dev_data = text_data.test_set
+    val_data = text_data.val_set
+    test_data = text_data.test_set
     train_data.set_input('words','seq_len')
     train_data.set_target('target')
-    test_dev_data.set_input('words','seq_len')
-    test_dev_data.set_target('target')
-    test_data,dev_data = test_dev_data.split(0.2)
+    val_data.set_input('words','seq_len')
+    val_data.set_target('target')
 
-    test_data = test_dev_data
+    test_data.set_input('words','seq_len')
+    test_data.set_target('target')
+
     init_embeds = None
     if args.pretrain_model == "None":
         print("No pretrained model with be used.")
@@ -262,8 +273,8 @@ def train(args):
     else:
         device = None
 
-    print("train_size:{0} ; dev_size:{1} ; test_size:{2}".format
-        ( train_data.get_length(),dev_data.get_length(),test_data.get_length() ) )
+    print("train_size:{0} ; val_size:{1} ; test_size:{2}".format
+        ( train_data.get_length(),val_data.get_length(),test_data.get_length() ) )
     
     if args.optim == "Adam":
         print("Using Adam as optimizer.")
@@ -278,25 +289,150 @@ def train(args):
     metric = AccuracyMetric()
     model_save_path = os.path.join(args.model_dir,args.model,args.model_suffix)
     earlystop = EarlyStopCallback(args.patience)
+    fitlog_back = FitlogCallback({"val":val_data,"train":train_data})
     trainer = Trainer(  train_data=train_data,model=model,save_path=model_save_path,
                         device = device,n_epochs=args.epochs,
-                        optimizer=optimizer,dev_data=test_data,
+                        optimizer=optimizer,dev_data=val_data,
                         loss=criterion,batch_size=args.batch_size,
                         metrics=metric,
-                        callbacks=[FitlogCallback(test_data),earlystop])
+                        callbacks=[fitlog_back,earlystop])
     trainer.train()
     print("Train Done.")
 
-    tester = Tester(data=test_data,model=model,metrics=metric,
+    tester = Tester(data=val_data,model=model,metrics=metric,
                     batch_size=args.batch_size,device=device)
     tester.test()
     print("Test Done.")
+
+    print("Predict the answer with best model...")
+    acc = 0.0
+    output = []
+    data_iterator = Batch(test_data, batch_size=args.batch_size)
+    for data_x,batch_y in data_iterator:
+        i_data = Variable(data_x['words']).cuda()
+        pred = model(i_data)[C.OUTPUT]
+        pred = pred.sigmoid()
+        # print(pred.shape)
+        output.append(pred.cpu().data)
+    output = torch.cat(output,0).numpy()
+    print(output.shape)
+    print("Predict Done. {} records".format(len(output)*args.batch_size))
+    result_save_path = os.path.join(args.result_dir,args.model+args.model_suffix)
+    with open(result_save_path+".pkl",'wb') as f:
+        pickle.dump(output,f)
+    output = output.squeeze()[:,0].tolist()
+    projectid = text_data.test_projectid.values
+    answers = []
+    count = 0
+    for i in range(len(output)):
+        if output[i] < 0.5:
+            count += 1
+    print("true sample count:{}".format(count))
+    add_count = 0 
+    for i in range(len(projectid)-len(output) ):
+        output.append([0.13])
+        add_count += 1
+    print("Add {} default result in predict.".format(add_count))
+        
+    df = pd.DataFrame()
+    df['projectid'] = projectid
+    df['y'] = output
+    df.to_csv(result_save_path+".csv", index=False)
+    print("Predict Done.")
+
     fitlog.finish()   
+
+
+def predict(args):
+    text_data = TextData()
+    with open(os.path.join(args.vocab_dir, args.vocab_data), 'rb') as fin:
+        text_data = pickle.load(fin)
+    vocab_size = text_data.vocab_size
+    class_num = text_data.class_num
+    # class_num = 1
+    seq_len = text_data.max_seq_len
+    print("(vocab_size,class_num,seq_len):({0},{1},{2})".format(vocab_size,class_num,seq_len))
+
+    test_data = text_data.test_set
+    test_data.set_input('words','seq_len')
+    test_data.set_target('target')
+    test_size = test_data.get_length()
+    print("test_size:{}".format(test_size) )
+    print("Data type:{}".format(type(test_data)))
+
+    init_embeds = None
+    model_save_path = os.path.join(args.model_dir,args.model,args.model_suffix,args.reload_model_name)
+    print("Loading the model {}".format(model_save_path))
+    model = torch.load(model_save_path)
+    model.eval()
+    print(model)
+    if args.cuda:
+        device = torch.device('cuda')
+    else:
+        device = None
+    model.to(device)
+    acc = 0.0
+    output = []
+    data_iterator = Batch(test_data, batch_size=args.batch_size)
+    for data_x,batch_y in data_iterator:
+        i_data = Variable(data_x['words']).cuda()
+        pred = model(i_data)[C.OUTPUT]
+        pred = pred.sigmoid()
+        # print(pred.shape)
+        output.append(pred.cpu().data)
+    output = torch.cat(output,0).numpy()
+    print(output.shape)
+    print("Predict Done.{} records".format(len(output)*args.batch_size))
+    result_save_path = os.path.join(args.result_dir,args.model+args.model_suffix+args.reload_model_name)
+    with open(result_save_path+".pkl",'wb') as f:
+        pickle.dump(output,f)
+    output = output.squeeze()[:,0].tolist()
+    projectid = text_data.test_projectid.values
+    answers = []
+    count = 0
+    for i in range(len(output)):
+        if output[i] < 0.5:
+            count += 1
+    print("pc1 < 0.5 count:{}".format(count))
+    for i in range(len(projectid)-len(output) ):
+        output.append([0.87])
+        
+    df = pd.DataFrame()
+    df['projectid'] = projectid
+    df['y'] = output
+    df.to_csv(result_save_path+".csv", index=False)
+    # with open(result_save_path,'w') as f:
+        
+    #     for i in output:
+    #         f.write()
+    fitlog.finish()   
+
+def show_data(args):
+    text_data = TextData()
+    with open(os.path.join(args.vocab_dir, args.vocab_data), 'rb') as fin:
+        text_data = pickle.load(fin)
+    train_data = text_data.train_set
+    val_data = text_data.val_set
+    test_data = text_data.test_set
+    train_size = text_data.train_size
+    val_size = text_data.val_size
+    test_size = text_data.test_size
+    tcount = 0
+    for ins in train_data:
+        if ins['target'] > 0.5:
+            tcount += 1
+    print("In train set t:f =  {} : {}, t_rate={}".format(tcount,train_size-tcount,tcount/train_size ))
+    tcount = 0
+    for ins in val_data:
+        if ins['target'] > 0.5:
+            tcount += 1
+    print("In val set t:f =  {} : {}, t_rate={}".format(tcount,val_size-tcount,tcount/val_size))
 
 
 def run():
     args = parse_args()
-    logger = logging.getLogger("lab4")
+    print("Running with args:{}".format(args))
+    logger = logging.getLogger("KDD CUP 2014")
     logger.setLevel(logging.INFO)
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     if args.log_path:
@@ -314,12 +450,20 @@ def run():
 
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
+    print('Checking the data files...')
+    for dir_path in [args.vocab_dir, args.model_dir, args.result_dir, args.prepare_dir]:
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path)
 
     if args.prepare:
         prepare(args)
+    if args.show_data:
+        show_data(args)
     if args.pretrain:
         pretrain_embedding(args)
     if args.train:
         train(args)
+    if args.predict:
+        predict(args)
 if __name__ == "__main__":
     run()

@@ -1,0 +1,15 @@
+Step:1	{"loss": {"loss": 0.6650066375732422}, "epoch": 1, "step": 1}
+Step:2	{"loss": {"loss": 0.553381621837616}, "epoch": 1, "step": 2}
+Step:3	{"loss": {"loss": 0.45660126209259033}, "epoch": 1, "step": 3}
+Step:4	{"loss": {"loss": 0.429671049118042}, "epoch": 2, "step": 4}
+Step:5	{"loss": {"loss": 0.4078015685081482}, "epoch": 2, "step": 5}
+Step:6	{"loss": {"loss": 0.4192299246788025}, "epoch": 2, "step": 6}
+Step:7	{"loss": {"loss": 0.44836893677711487}, "epoch": 3, "step": 7}
+Step:8	{"loss": {"loss": 0.43716734647750854}, "epoch": 3, "step": 8}
+Step:9	{"loss": {"loss": 0.3816029727458954}, "epoch": 3, "step": 9}
+Step:10	{"loss": {"loss": 0.41149115562438965}, "epoch": 4, "step": 10}
+Step:11	{"loss": {"loss": 0.38650158047676086}, "epoch": 4, "step": 11}
+Step:12	{"loss": {"loss": 0.5553103685379028}, "epoch": 4, "step": 12}
+Step:13	{"loss": {"loss": 0.3978937864303589}, "epoch": 5, "step": 13}
+Step:14	{"loss": {"loss": 0.42220836877822876}, "epoch": 5, "step": 14}
+Step:15	{"loss": {"loss": 0.3766821324825287}, "epoch": 5, "step": 15}

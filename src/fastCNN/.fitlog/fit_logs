@@ -1,0 +1,784 @@
+-------commit-------
+2019-06-14 02:54:51
+b2df8b120e1c6b3c70288b8a9151802aee9cb284
+------arguments-----
+Run /remote-home/competition/anaconda3/bin/fitlog init --no-git
+-------system-------
+[master (root-commit) b2df8b1] Project initialized.
+ 6 files changed, 683 insertions(+)
+ create mode 100755 .gitignore
+ create mode 100644 dataset.py
+ create mode 100755 main.py
+ create mode 100644 model.py
+ create mode 100644 preprocess.py
+ create mode 100644 run.py
+
+
+-------commit-------
+2019-06-14 02:56:19
+b2df8b120e1c6b3c70288b8a9151802aee9cb284
+------arguments-----
+Run run.py --train --model MyCNNText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 64 --learning_rate 0.001 --dropout 0 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-14 02:58:56
+ebda556f4a927e1b2a7307bf318c7a56c34b2757
+------arguments-----
+Run run.py --train --model MyCNNText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 64 --learning_rate 0.001 --dropout 0 --weight_decay 0
+-------system-------
+[master ebda556] Commit by fitlog
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-14 03:10:08
+ebda556f4a927e1b2a7307bf318c7a56c34b2757
+------arguments-----
+Run run.py --train --model MyCNNText --optim Adam --cuda --gpu 1 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 20 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run_on_gpu1.sh
+	run_records.log
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-14 03:13:22
+ebda556f4a927e1b2a7307bf318c7a56c34b2757
+------arguments-----
+Run run.py --train --model MyCNNText --optim Adam --cuda --gpu 1 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default_320 --epochs 20 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_on_gpu1.sh
+	run_records.log
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-14 03:52:49
+79814d5f66ed0885e46b9baddcbbc101ba1814e7
+------arguments-----
+Run run.py --train --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 79814d5] Commit by fitlog
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-14 06:25:04
+320e368899e82e5d260c59369adacd11233d7a64
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 320e368] Commit by fitlog
+ 1 file changed, 29 insertions(+)
+
+
+-------commit-------
+2019-06-14 06:25:38
+29b90d300320b83dddf4f9ca23efed4ea39823a1
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 29b90d3] Commit by fitlog
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+
+-------commit-------
+2019-06-14 06:29:52
+f5310fcc47fd5aec7791592bd750ac18bd798867
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master f5310fc] Commit by fitlog
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-14 06:32:53
+f4b2cf57a6c86e6b09fb7df20e5835ac2f215689
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master f4b2cf5] Commit by fitlog
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+
+-------commit-------
+2019-06-14 06:39:32
+e6ae962921686c57625bb67177a257dcfa0a6ad3
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master e6ae962] Commit by fitlog
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+
+-------commit-------
+2019-06-14 06:53:01
+81fbdccfb5099c45bdd80403d438bd5a91bbe0df
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 81fbdcc] Commit by fitlog
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+
+-------commit-------
+2019-06-14 06:57:56
+ff1eb82a44dd851927bc1a13badfdf8b4af69b8f
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master ff1eb82] Commit by fitlog
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+
+-------commit-------
+2019-06-14 07:02:51
+c0f01f2760d74bc2bd6e5ce005a5d93ccfe77eee
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master c0f01f2] Commit by fitlog
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-14 07:12:10
+1c1f89a355a9ca2a6e6daa9e992c80ebb9c67aed
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 1c1f89a] Commit by fitlog
+ 1 file changed, 6 insertions(+), 7 deletions(-)
+
+
+-------commit-------
+2019-06-14 07:17:58
+263ec9b2887d67d4b67cb7a7d8d12bc8aa05ea0e
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 263ec9b] Commit by fitlog
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+
+-------commit-------
+2019-06-14 07:21:26
+c058446bcfb2dc2afad78c86facf578db60df689
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master c058446] Commit by fitlog
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-14 07:23:22
+9d1bac3c6642233467bb06ae9c9ffe3ab3434a2f
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 9d1bac3] Commit by fitlog
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+
+
+-------commit-------
+2019-06-14 07:25:22
+96173a1189321a2029f9343d4e6ff5633ce678b8
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 96173a1] Commit by fitlog
+ 1 file changed, 1 insertion(+)
+
+
+-------commit-------
+2019-06-14 07:28:19
+05715694ec3e7fbb5147bef05790066e02a5745a
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 0571569] Commit by fitlog
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-14 07:31:43
+d22e650df49390112d56d344a60ec7cb5fd165f0
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master d22e650] Commit by fitlog
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+
+-------commit-------
+2019-06-14 07:48:58
+adb1a6dc12fc51ed1d8f9ca969bad0aa29823f96
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master adb1a6d] Commit by fitlog
+ 1 file changed, 11 insertions(+), 4 deletions(-)
+
+
+-------commit-------
+2019-06-14 07:50:39
+c331322be4fb8704a2447f35556004f205d97ed2
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master c331322] Commit by fitlog
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+
+
+-------commit-------
+2019-06-14 07:54:16
+51a9cb92115bc7def3e503b6d8ccc2500f9fc723
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 51a9cb9] Commit by fitlog
+ 1 file changed, 1 insertion(+)
+
+
+-------commit-------
+2019-06-14 07:57:36
+0773d9567faffc70426ccc25fdfb32a3c0501927
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 0773d95] Commit by fitlog
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+
+-------commit-------
+2019-06-14 08:00:36
+9a7f114524dcfbc6a0413b6f91a6a93db5d363f8
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 9a7f114] Commit by fitlog
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-14 08:20:15
+47863747eae626b66523f285554e7e7002ef4cc1
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 4786374] Commit by fitlog
+ 2 files changed, 14 insertions(+), 9 deletions(-)
+
+
+-------commit-------
+2019-06-14 08:28:25
+04579afab574886fe8b77d7a6d105d8b52f9950c
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 04579af] Commit by fitlog
+ 1 file changed, 1 insertion(+)
+
+
+-------commit-------
+2019-06-14 09:01:02
+ac2398a396af78a60376d756b39718d5fd5f8d37
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master ac2398a] Commit by fitlog
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-14 09:02:59
+ac2398a396af78a60376d756b39718d5fd5f8d37
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 160 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-14 09:12:24
+b2adc5760067fd3f6ec1872efbaacccb74ceb58d
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 160 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master b2adc57] Commit by fitlog
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+
+-------commit-------
+2019-06-14 09:17:15
+a7bdb7b594bd3f438d16580ecfeab92d04710dc9
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 160 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master a7bdb7b] Commit by fitlog
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+
+-------commit-------
+2019-06-14 09:24:02
+b392fce6b002ea90e557f4138dc75799fada4765
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 160 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master b392fce] Commit by fitlog
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-14 09:27:57
+1594b7cb9cd61a0e1a333d1e5b25f57e9f71197e
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 160 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 1594b7c] Commit by fitlog
+ 1 file changed, 1 insertion(+)
+
+
+-------commit-------
+2019-06-14 09:38:29
+962440a27e95c9f7810e06c49b74353949ad70eb
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 160 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 962440a] Commit by fitlog
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-14 09:43:08
+962440a27e95c9f7810e06c49b74353949ad70eb
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 160 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-14 09:46:46
+1c62689ebe8301346935f34cc85c58f2fabbc66f
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 160 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 1c62689] Commit by fitlog
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+
+-------commit-------
+2019-06-14 09:48:20
+1c62689ebe8301346935f34cc85c58f2fabbc66f
+------arguments-----
+Run run.py --train --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 160 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-14 10:13:03
+2adbf32e6607ceabae64b4f14e88d10b7d4c3e5a
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 160 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 2adbf32] Commit by fitlog
+ 1 file changed, 15 insertions(+), 8 deletions(-)
+
+
+-------commit-------
+2019-06-14 10:13:49
+4a41b7cfbe313ba5ddb5c80e4c214c996bbcfe6e
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 160 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 4a41b7c] Commit by fitlog
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-14 10:17:01
+db33dc2d3e99cd6edfca78d53f1f3379e905171d
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 160 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master db33dc2] Commit by fitlog
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+
+-------commit-------
+2019-06-14 10:21:26
+63e650dbf38e276bc243df0692a5906983d8556b
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 160 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 63e650d] Commit by fitlog
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-14 10:24:37
+0ca51b3b379727ec4223da9d4e85f62dd1f2f282
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 10 --batch_size 160 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 0ca51b3] Commit by fitlog
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+
+-------commit-------
+2019-06-14 10:39:39
+785349a77e7713f7e45074a10da9a4ab1bb8a361
+------arguments-----
+Run run.py --show_data
+-------system-------
+[master 785349a] Commit by fitlog
+ 1 file changed, 27 insertions(+)
+
+
+-------commit-------
+2019-06-14 10:48:24
+42b57af2d4af253ebd321f5981979202c67caba0
+------arguments-----
+Run run.py --show_data
+-------system-------
+[master 42b57af] Commit by fitlog
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+
+-------commit-------
+2019-06-14 22:00:17
+201eebc86dbed28009d910ac5d6defa800892a62
+------arguments-----
+Run run.py --predict --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix default --epochs 5 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 201eebc] Commit by fitlog
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-14 22:01:30
+201eebc86dbed28009d910ac5d6defa800892a62
+------arguments-----
+Run run.py --show_data --train --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab.data --model_dir ../../data/models --model_suffix ModelTest --epochs 5 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-14 22:17:02
+bcb355b99f62cc77cdec5af7609330427725813a
+------arguments-----
+Run run.py --train --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab1200.data --model_dir ../../data/models --model_suffix ModelTest --epochs 5 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master bcb355b] Commit by fitlog
+ 2 files changed, 16 insertions(+), 10 deletions(-)
+
+
+-------commit-------
+2019-06-14 22:29:31
+5f5fe87d9c7c3f2a4b4d63fb0be2ee91346a54bf
+------arguments-----
+Run run.py --train --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab_sub1200.data --model_dir ../../data/models --model_suffix ModelTest --epochs 5 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 5f5fe87] Commit by fitlog
+ 1 file changed, 21 insertions(+), 6 deletions(-)
+
+
+-------commit-------
+2019-06-14 22:52:29
+293c3604d50f54bc774247d516b1b29bfb34b501
+------arguments-----
+Run run.py --train --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab_sub1200_balanced.data --model_dir ../../data/models --model_suffix ModelTest --epochs 5 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 293c360] Commit by fitlog
+ 2 files changed, 23 insertions(+), 16 deletions(-)
+
+
+-------commit-------
+2019-06-14 23:25:46
+782f275943ba86eb05e51d62f407589a27b77733
+------arguments-----
+Run run.py --train --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab_sub1200_balanced.data --model_dir ../../data/models --model_suffix ModelTest --epochs 5 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 782f275] Commit by fitlog
+ 1 file changed, 42 insertions(+), 32 deletions(-)
+
+
+-------commit-------
+2019-06-15 01:40:10
+e3b64bea78f7d7faf6055325b58090b65b901f42
+------arguments-----
+Run run.py --train --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab_sub10000_balanced.data --model_dir ../../data/models --model_suffix ModelTest --epochs 5 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master e3b64be] Commit by fitlog
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+
+-------commit-------
+2019-06-15 01:57:49
+7aeeeae885f524e5ef90cb8918d35729a9db1a0d
+------arguments-----
+Run run.py --train --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab_sub22151_balanced.data --model_dir ../../data/models --model_suffix ModelTest --epochs 5 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 7aeeeae] Commit by fitlog
+ 2 files changed, 40 insertions(+), 4 deletions(-)
+
+
+-------commit-------
+2019-06-15 02:11:58
+7b337c7005df19ae9216359beecb48fdbd717f0f
+------arguments-----
+Run run.py --train --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab_sub22151_balanced.data --model_dir ../../data/models --model_suffix ModelTest --epochs 20 --batch_size 128 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 7b337c7] Commit by fitlog
+ 1 file changed, 12 insertions(+), 5 deletions(-)
+
+
+-------commit-------
+2019-06-15 02:46:22
+0e68c7e3e26b150de071758ec47cacdbae152609
+------arguments-----
+Run run.py --train --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab_sub22151_balanced.data --model_dir ../../data/models --model_suffix ModelTest --epochs 5 --batch_size 128 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 0e68c7e] Commit by fitlog
+ 2 files changed, 23 insertions(+), 9 deletions(-)
+
+
+-------commit-------
+2019-06-15 02:55:37
+8cc756e9b9110c7adbb55a5094a01f3ac6e330d1
+------arguments-----
+Run run.py --train --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab_sub10000_balanced.data --model_dir ../../data/models --model_suffix ModelTest --epochs 5 --batch_size 128 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 8cc756e] Commit by fitlog
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-15 03:06:23
+c91a99cfcf8505f113da9933961f35e67e9efee1
+------arguments-----
+Run run.py --train --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab_sub10000_balanced.data --model_dir ../../data/models --model_suffix ModelTest --epochs 5 --batch_size 128 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master c91a99c] Commit by fitlog
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-15 03:10:34
+c91a99cfcf8505f113da9933961f35e67e9efee1
+------arguments-----
+Run run.py --predict --model CNNText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab_oversampling.data --model_dir ../../data/models --model_suffix oversampling --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-15 03:10:58
+c91a99cfcf8505f113da9933961f35e67e9efee1
+------arguments-----
+Run run.py --predict --model CNNText --optim Adam --cuda --gpu 1 --vocab_dir ../../data/vocab --vocab_data vocab_oversampling.data --model_dir ../../data/models --model_suffix oversampling --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-15 03:11:55
+c91a99cfcf8505f113da9933961f35e67e9efee1
+------arguments-----
+Run run.py --train --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab_sub10000_balanced.data --model_dir ../../data/models --model_suffix ModelTest --epochs 5 --batch_size 128 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-15 03:13:30
+d5cf386b466afc39293d692ec36c9aea2c955e6d
+------arguments-----
+Run run.py --predict --model CNNText --optim Adam --cuda --gpu 1 --vocab_dir ../../data/vocab --vocab_data vocab_oversampling.data --model_dir ../../data/models --model_suffix oversampling --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master d5cf386] Commit by fitlog
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-15 03:13:34
+d5cf386b466afc39293d692ec36c9aea2c955e6d
+------arguments-----
+Run run.py --train --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab_sub10000_balanced.data --model_dir ../../data/models --model_suffix ModelTest --epochs 50 --batch_size 128 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-15 03:20:23
+d5cf386b466afc39293d692ec36c9aea2c955e6d
+------arguments-----
+Run run.py --train --model CNNText --optim Adam --cuda --gpu 1 --vocab_dir ../../data/vocab --vocab_data vocab_oversampling.data --model_dir ../../data/models --model_suffix oversampling --epochs 10 --batch_size 320 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+

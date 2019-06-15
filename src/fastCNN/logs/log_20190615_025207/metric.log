@@ -1,0 +1,4 @@
+{"metric": {"AccuracyMetric": {"acc": 0.501828}, "step": 174, "epoch": 1}}
+Step:174	{"metric": {"AccuracyMetric": {"acc": 0.501828}, "step": 174, "epoch": 1}, "step": 174, "epoch": 1}
+Step:174	{"metric": {"test": {"AccuracyMetric": {"acc": 0.501828}}}, "step": 174, "epoch": 1}
+{"metric": {"test": {"AccuracyMetric": {"acc": 0.501828}}}}
