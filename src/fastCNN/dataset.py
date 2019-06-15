@@ -30,6 +30,7 @@ def combine_whitespace(s):
 
 
 def tokenize(data):
+    print("Tokenizing data num:{}".format(len(data)))
     new_data = []
     for i in range(len(data)):
         text = data[i]
