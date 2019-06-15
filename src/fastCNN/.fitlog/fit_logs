@@ -782,3 +782,71 @@ Untracked files:
 nothing added to commit but untracked files present
 
 
+-------commit-------
+2019-06-15 03:53:04
+34bbe5e15de3a9e16cb712d6f29b105c246be3ed
+------arguments-----
+Run run.py --train --model LSTMText --optim Adam --cuda --gpu 0 --vocab_dir ../../data/vocab --vocab_data vocab_sub22151_balanced.data --model_dir ../../data/models --model_suffix ModelTest --epochs 50 --batch_size 128 --learning_rate 0.001 --dropout 0.2 --weight_decay 0
+-------system-------
+[master 34bbe5e] Commit by fitlog
+ 1 file changed, 1 insertion(+)
+
+
+-------commit-------
+2019-06-15 07:19:57
+6c00f663b40a7203e47135880c47bca7bdd4fef1
+------arguments-----
+Run run.py --train --model CNNText --optim Adam --cuda --gpu 1 --vocab_dir ../../data/vocab --vocab_data vocab_oversampling.data --model_dir ../../data/models --model_suffix oversampling --epochs 10 --batch_size 640 --learning_rate 0.001 --dropout 0.3 --weight_decay 0.3
+-------system-------
+[master 6c00f66] Commit by fitlog
+ 3 files changed, 171 insertions(+), 132 deletions(-)
+
+
+-------commit-------
+2019-06-15 07:40:47
+6c00f663b40a7203e47135880c47bca7bdd4fef1
+------arguments-----
+Run run.py --train --model CNNText --optim Adam --cuda --gpu 1 --vocab_dir ../../data/vocab --vocab_data vocab_oversampling.data --model_dir ../../data/models --model_suffix oversampling --epochs 10 --batch_size 640 --learning_rate 0.001 --dropout 0.3 --weight_decay 0.3
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-15 08:22:42
+6c00f663b40a7203e47135880c47bca7bdd4fef1
+------arguments-----
+Run run.py --train --model CNNText --optim Adam --cuda --gpu 1 --vocab_dir ../../data/vocab --vocab_data vocab_oversampling.data --model_dir ../../data/models --model_suffix oversampling --epochs 10 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+

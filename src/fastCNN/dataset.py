@@ -30,8 +30,9 @@ def combine_whitespace(s):
 
 
 def tokenize(data):
-    print("Tokenizing data num:{}".format(len(data)))
+    print("Tokenizing data , total num:{}".format(len(data)))
     new_data = []
+    wired_type_count = 0
     for i in range(len(data)):
         text = data[i]
         if text == "":
@@ -39,8 +40,11 @@ def tokenize(data):
         elif text is None:
             print("None type text.")
         elif not isinstance(text,str):
-            print("ATTENTION TYPE:{} of type {}".format(text,type(text)))
+            # print("ATTENTION TYPE:{} of type {}".format(text,type(text)))
+            wired_type_count += 1
+            wired_type = type(text)
             text = str(text)
+            text = "nan"
         newtext = ""
         for c in text:
             if c not in string.punctuation:
@@ -51,6 +55,7 @@ def tokenize(data):
         if newtext is not None:
             new_data.append(newtext)
     print("Tokenized:{}/{}".format(len(new_data),len(data)))
+    print("ATTENTION TYPE:{} * {}".format(wired_type,wired_type_count))
     return new_data
 
 
@@ -102,16 +107,18 @@ class TextData():
         else:
             return words[:self.max_seq_len]
 
-    def fetch_csv(self, path, subset_num=None,us_rate=None,os_rate=None):
+    def fetch_csv(self, path,text_var="essay",target_var="is_exciting", subset_num=None,us_rate=None,os_rate=None):
         """ 
         us_rate: under sampling rate
         os_rate: over sampling rate
          """
-        print("Loading data from {} .......".format(path))
-        df = pd.read_csv(path, header=0)
+        print("Loading data from {} ...".format(path))
+        df = pd.read_csv(path)
         # text_vars=["title", "short_description", "need_statement", "essay"]
-        text_vars = "essay"  # only select the essay column
+        text_vars = text_var  # only select the essay column
         target_var = "y"
+        df[target_var][ df["is_exciting"]=="t" ] = 1.0
+        df[target_var][ df["is_exciting"]!="t" ] = 0.0
         train_df = df[df['split'] == 'train']
         val_df = df[df['split'] == 'val']
         test_df = df[df['split'] == 'test']
@@ -120,12 +127,12 @@ class TextData():
         test_num = len(test_df)
         print("nums:({},{},{})".format(train_num,val_num,test_num))
         if os_rate is not None:
-            print("Over Sampling...")
+            print("Over Sample mode")
             ros = RandomOverSampler(random_state=0)
         elif us_rate is not None:
-            print("Under Sampling...")
-            train_df_t = train_df[df['is_exciting'] == 't']
-            train_df_f = train_df[df['is_exciting'] == 'f']
+            print("Under Sample mode")
+            train_df_t = train_df[df['is_exciting'] == "t"]
+            train_df_f = train_df[df['is_exciting'] == "f"]
             t_num = len(train_df_t)
             f_num = len(train_df_f)
             print("Raw train t:f = {}:{}".format(t_num,f_num))
@@ -137,8 +144,8 @@ class TextData():
             print("Balanced train: t:f = {}:{}".format(len(balanced_train_t),len(balanced_train_f) ))
             # print("Train 1.0:",len(train_df[train_df[target_var] == 1.0]))
 
-            val_df_t = val_df[df['is_exciting'] == 't']
-            val_df_f = val_df[df['is_exciting'] == 'f']
+            val_df_t = val_df[df['is_exciting'] == "t"]
+            val_df_f = val_df[df['is_exciting'] == "f"]
             t_num = len(val_df_t)
             f_num = len(val_df_f)
             print("Raw val t:f = {}:{}".format(t_num,f_num))
@@ -149,7 +156,7 @@ class TextData():
             val_df = pd.concat([balanced_val_t,balanced_val_f]).sample(frac=1)
             print("Balanced val: t:f = {}:{}".format(len(balanced_val_t) ,len(balanced_val_f) ))
         else:
-            print("No sampling")
+            print("No sample mode")
         if subset_num is not None and subset_num > 0:
             print("Get sub set of size {}.".format(subset_num))
             train_df = train_df.sample(n=subset_num)
@@ -158,7 +165,13 @@ class TextData():
         train_num = len(train_df)
         val_num = len(val_df)
         test_num = len(test_df) 
-        print("nums:({},{},{})".format(train_num,val_num,test_num))
+        print("subset nums:({},{},{})".format(train_num,val_num,test_num))
+
+        train_target = train_df[target_var].values
+        count = 0
+        print(count)
+        val_target = val_df[target_var].values
+        test_target = test_df[target_var].values
 
         print("tokenize train set")
         train_input = tokenize(train_df[text_vars].values)
@@ -167,20 +180,18 @@ class TextData():
         print("tokenize test set")
         test_input = tokenize(test_df[text_vars].values)
 
-        train_target = train_df[target_var].values
-        val_target = val_df[target_var].values
-        test_target = test_df[target_var].values
         assert (self.class_num == 2)
         self.test_projectid = test_df['projectid']
         # Building Fastnlp dataset.
         print("Building Fastnlp dataset.")
         if os_rate is not None:
+            print("Over Sampling...")
             train_input,train_target = ros.fit_sample(  np.array(train_input)[:,np.newaxis],
                                                         np.array(train_target)[:,np.newaxis])
             train_input = train_input.squeeze().tolist()
             train_target = train_target.tolist()
             val_input,val_target = ros.fit_sample(  np.array(val_input)[:,np.newaxis],
-                                                        np.array(val_target)[:,np.newaxis])
+                                                    np.array(val_target)[:,np.newaxis])
             val_input = val_input.squeeze().tolist()
             val_target = val_target.tolist()
         self.train_set = DataSet({"text": train_input, "class": train_target})
@@ -232,10 +243,10 @@ class TextData():
         # self.train_set.apply(lambda x : class2target(x['class'],self.calss_num),new_field_name="target")
         # self.test_set.apply(lambda x : class2target(x['class'],self.calss_num),new_field_name="target")
 
-    def fetch_data(self, path,subset_num=None,us_rate=None,os_rate=None):
+    def fetch_data(self, path,text_var="essay",target="is_exciting",subset_num=None,us_rate=None,os_rate=None):
         if self.data_src == "all_data":
             # Loading 20newsgroups data and tokenize.
-            self.fetch_csv(path,subset_num,us_rate,os_rate)
+            self.fetch_csv(path,text_var,target,subset_num,us_rate,os_rate)
         else:
             print("No legal data src type:{} ...".format(self.data_src))
             assert(0 == 1)

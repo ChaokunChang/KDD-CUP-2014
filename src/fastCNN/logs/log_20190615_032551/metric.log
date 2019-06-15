@@ -7,3 +7,27 @@ Step:1646	{"metric": {"train": {"AccuracyMetric": {"acc": 0.693936}}}, "step": 1
 Step:3292	{"metric": {"AccuracyMetric": {"acc": 0.524689}}, "step": 3292, "epoch": 2}
 Step:3292	{"metric": {"val": {"AccuracyMetric": {"acc": 0.524689}}}, "step": 3292, "epoch": 2}
 Step:3292	{"metric": {"train": {"AccuracyMetric": {"acc": 0.797905}}}, "step": 3292, "epoch": 2}
+Step:4938	{"metric": {"AccuracyMetric": {"acc": 0.517626}}, "step": 4938, "epoch": 3}
+Step:4938	{"metric": {"val": {"AccuracyMetric": {"acc": 0.517626}}}, "step": 4938, "epoch": 3}
+Step:4938	{"metric": {"train": {"AccuracyMetric": {"acc": 0.863858}}}, "step": 4938, "epoch": 3}
+Step:6584	{"metric": {"AccuracyMetric": {"acc": 0.515408}}, "step": 6584, "epoch": 4}
+Step:6584	{"metric": {"val": {"AccuracyMetric": {"acc": 0.515408}}}, "step": 6584, "epoch": 4}
+Step:6584	{"metric": {"train": {"AccuracyMetric": {"acc": 0.903225}}}, "step": 6584, "epoch": 4}
+Step:8230	{"metric": {"AccuracyMetric": {"acc": 0.51353}}, "step": 8230, "epoch": 5}
+Step:8230	{"metric": {"val": {"AccuracyMetric": {"acc": 0.51353}}}, "step": 8230, "epoch": 5}
+Step:8230	{"metric": {"train": {"AccuracyMetric": {"acc": 0.927463}}}, "step": 8230, "epoch": 5}
+Step:9876	{"metric": {"AccuracyMetric": {"acc": 0.510822}}, "step": 9876, "epoch": 6}
+Step:9876	{"metric": {"val": {"AccuracyMetric": {"acc": 0.510822}}}, "step": 9876, "epoch": 6}
+Step:9876	{"metric": {"train": {"AccuracyMetric": {"acc": 0.942533}}}, "step": 9876, "epoch": 6}
+Step:11522	{"metric": {"AccuracyMetric": {"acc": 0.509303}}, "step": 11522, "epoch": 7}
+Step:11522	{"metric": {"val": {"AccuracyMetric": {"acc": 0.509303}}}, "step": 11522, "epoch": 7}
+Step:11522	{"metric": {"train": {"AccuracyMetric": {"acc": 0.953606}}}, "step": 11522, "epoch": 7}
+Step:13168	{"metric": {"AccuracyMetric": {"acc": 0.509242}}, "step": 13168, "epoch": 8}
+Step:13168	{"metric": {"val": {"AccuracyMetric": {"acc": 0.509242}}}, "step": 13168, "epoch": 8}
+Step:13168	{"metric": {"train": {"AccuracyMetric": {"acc": 0.960946}}}, "step": 13168, "epoch": 8}
+Step:14814	{"metric": {"AccuracyMetric": {"acc": 0.509417}}, "step": 14814, "epoch": 9}
+Step:14814	{"metric": {"val": {"AccuracyMetric": {"acc": 0.509417}}}, "step": 14814, "epoch": 9}
+Step:14814	{"metric": {"train": {"AccuracyMetric": {"acc": 0.966296}}}, "step": 14814, "epoch": 9}
+Step:16460	{"metric": {"AccuracyMetric": {"acc": 0.507597}}, "step": 16460, "epoch": 10}
+Step:16460	{"metric": {"val": {"AccuracyMetric": {"acc": 0.507597}}}, "step": 16460, "epoch": 10}
+Step:16460	{"metric": {"train": {"AccuracyMetric": {"acc": 0.969411}}}, "step": 16460, "epoch": 10}
