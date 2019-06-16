@@ -33,7 +33,7 @@ df = df[df["split"]!="none"]
 # df["is_exciting"][ (df["is_exciting"] != "t") & (df["is_exciting"] != "f") ] = "f"
 # df["y"] = 0
 # df["y"][df["is_exciting"]=="t"] = 1
-tf_vars = [  "is_exciting ","at_least_1_teacher_referred_donor","great_chat","fully_funded",
+tf_vars = [  "is_exciting","at_least_1_teacher_referred_donor","great_chat","fully_funded",
                 "at_least_1_green_donation","donation_from_thoughtful_donor",
                 "three_or_more_non_teacher_referred_donors",
                 "one_non_teacher_referred_donor_giving_100_plus"]

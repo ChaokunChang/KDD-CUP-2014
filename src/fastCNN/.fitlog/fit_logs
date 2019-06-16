@@ -850,3 +850,421 @@ Untracked files:
 nothing added to commit but untracked files present
 
 
+-------commit-------
+2019-06-15 10:31:06
+e7a88eab0c7fc1d067cdf422db26420df6647cb2
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 1 --text_var essay --target_var is_exciting --vocab_dir ../../data/vocab --vocab_data vocab_essay_is_exciting.data --model_dir ../../data/models --model_suffix essay_is_exciting --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+[master e7a88ea] Commit by fitlog
+ 3 files changed, 35 insertions(+), 19 deletions(-)
+
+
+-------commit-------
+2019-06-15 10:31:10
+e7a88eab0c7fc1d067cdf422db26420df6647cb2
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 1 --text_var essay --target_var at_least_1_teacher_referred_donor --vocab_dir ../../data/vocab --vocab_data vocab_essay_at_least_1_teacher_referred_donor.data --model_dir ../../data/models --model_suffix essay_at_least_1_teacher_referred_donor --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_all.log
+	run_all.sh
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-15 10:31:14
+e7a88eab0c7fc1d067cdf422db26420df6647cb2
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 1 --text_var essay --target_var at_least_1_green_donation --vocab_dir ../../data/vocab --vocab_data vocab_essay_at_least_1_green_donation.data --model_dir ../../data/models --model_suffix essay_at_least_1_green_donation --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_all.log
+	run_all.sh
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-15 10:31:18
+e7a88eab0c7fc1d067cdf422db26420df6647cb2
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 1 --text_var essay --target_var three_or_more_non_teacher_referred_donors --vocab_dir ../../data/vocab --vocab_data vocab_essay_three_or_more_non_teacher_referred_donors.data --model_dir ../../data/models --model_suffix essay_three_or_more_non_teacher_referred_donors --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_all.log
+	run_all.sh
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-15 10:31:23
+e7a88eab0c7fc1d067cdf422db26420df6647cb2
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 1 --text_var essay --target_var one_non_teacher_referred_donor_giving_100_plus --vocab_dir ../../data/vocab --vocab_data vocab_essay_one_non_teacher_referred_donor_giving_100_plus.data --model_dir ../../data/models --model_suffix essay_one_non_teacher_referred_donor_giving_100_plus --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_all.log
+	run_all.sh
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-15 10:36:02
+437ee9331cb6815163c8f4b0e9e3b64edf09b97a
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 0 --text_var essay --target_var is_exciting --vocab_dir ../../data/vocab --vocab_data vocab_essay_is_exciting.data --model_dir ../../data/models --model_suffix essay_is_exciting --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+[master 437ee93] Commit by fitlog
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-15 10:36:07
+437ee9331cb6815163c8f4b0e9e3b64edf09b97a
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 0 --text_var essay --target_var one_non_teacher_referred_donor_giving_100_plus --vocab_dir ../../data/vocab --vocab_data vocab_essay_one_non_teacher_referred_donor_giving_100_plus.data --model_dir ../../data/models --model_suffix essay_one_non_teacher_referred_donor_giving_100_plus --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_all.log
+	run_all.sh
+	run_all0.log
+	run_all0.sh
+	run_all1.sh
+	run_all2.sh
+	run_all3.sh
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-15 10:40:18
+ff2f3327fb2049ea37e81e4110202ab771a9cc0f
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 0 --text_var essay --target_var is_exciting --vocab_dir ../../data/vocab --vocab_data vocab_essay_is_exciting.data --model_dir ../../data/models --model_suffix essay_is_exciting --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+[master ff2f332] Commit by fitlog
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+
+-------commit-------
+2019-06-15 10:40:40
+ff2f3327fb2049ea37e81e4110202ab771a9cc0f
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 0 --text_var essay --target_var one_non_teacher_referred_donor_giving_100_plus --vocab_dir ../../data/vocab --vocab_data vocab_essay_one_non_teacher_referred_donor_giving_100_plus.data --model_dir ../../data/models --model_suffix essay_one_non_teacher_referred_donor_giving_100_plus --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_all.log
+	run_all.sh
+	run_all0.log
+	run_all0.sh
+	run_all1.sh
+	run_all2.sh
+	run_all3.sh
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-15 10:42:22
+2021f933b4123362b2a284b516c7f85e19cf3f38
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 0 --text_var essay --target_var is_exciting --vocab_dir ../../data/vocab --vocab_data vocab_essay_is_exciting.data --model_dir ../../data/models --model_suffix essay_is_exciting --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+[master 2021f93] Commit by fitlog
+ 1 file changed, 1 insertion(+)
+
+
+-------commit-------
+2019-06-15 10:58:39
+2021f933b4123362b2a284b516c7f85e19cf3f38
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 0 --text_var essay --target_var one_non_teacher_referred_donor_giving_100_plus --vocab_dir ../../data/vocab --vocab_data vocab_essay_one_non_teacher_referred_donor_giving_100_plus.data --model_dir ../../data/models --model_suffix essay_one_non_teacher_referred_donor_giving_100_plus --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_all.log
+	run_all.sh
+	run_all0.log
+	run_all0.sh
+	run_all1.sh
+	run_all2.sh
+	run_all3.sh
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-15 11:00:16
+638f5973f6edcd52ec9cef3fe19322b015307332
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 0 --text_var essay --target_var is_exciting --vocab_dir ../../data/vocab --vocab_data vocab_essay_is_exciting.data --model_dir ../../data/models --model_suffix essay_is_exciting --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+[master 638f597] Commit by fitlog
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+
+-------commit-------
+2019-06-15 11:18:15
+638f5973f6edcd52ec9cef3fe19322b015307332
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 0 --text_var essay --target_var one_non_teacher_referred_donor_giving_100_plus --vocab_dir ../../data/vocab --vocab_data vocab_essay_one_non_teacher_referred_donor_giving_100_plus.data --model_dir ../../data/models --model_suffix essay_one_non_teacher_referred_donor_giving_100_plus --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_all.log
+	run_all.sh
+	run_all0.log
+	run_all0.sh
+	run_all1.sh
+	run_all2.sh
+	run_all3.sh
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-15 11:31:35
+638f5973f6edcd52ec9cef3fe19322b015307332
+------arguments-----
+Run run.py --train --model CNNText --optim Adam --cuda --gpu 1 --vocab_dir ../../data/vocab --vocab_data vocab_oversampling.data --model_dir ../../data/models --model_suffix oversampling --epochs 10 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_all.log
+	run_all.sh
+	run_all0.log
+	run_all0.sh
+	run_all1.sh
+	run_all2.sh
+	run_all3.sh
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-15 11:41:24
+1f05ad7d056da9399ec6b2b6b6f3882f666f12c6
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 0 --text_var essay --target_var is_exciting --vocab_dir ../../data/vocab --vocab_data vocab_essay_is_exciting.data --model_dir ../../data/models --model_suffix essay_is_exciting --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+[master 1f05ad7] Commit by fitlog
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+
+-------commit-------
+2019-06-15 11:42:31
+1f05ad7d056da9399ec6b2b6b6f3882f666f12c6
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 1 --text_var essay --target_var at_least_1_teacher_referred_donor --vocab_dir ../../data/vocab --vocab_data vocab_essay_at_least_1_teacher_referred_donor.data --model_dir ../../data/models --model_suffix essay_at_least_1_teacher_referred_donor --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_all.log
+	run_all.sh
+	run_all0.log
+	run_all0.sh
+	run_all1.log
+	run_all1.sh
+	run_all2.sh
+	run_all3.sh
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-15 11:43:05
+1f05ad7d056da9399ec6b2b6b6f3882f666f12c6
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 2 --text_var essay --target_var at_least_1_green_donation --vocab_dir ../../data/vocab --vocab_data vocab_essay_at_least_1_green_donation.data --model_dir ../../data/models --model_suffix essay_at_least_1_green_donation --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_all.log
+	run_all.sh
+	run_all0.log
+	run_all0.sh
+	run_all1.log
+	run_all1.sh
+	run_all2.log
+	run_all2.sh
+	run_all3.sh
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+
+-------commit-------
+2019-06-15 12:43:07
+1f05ad7d056da9399ec6b2b6b6f3882f666f12c6
+------arguments-----
+Run run.py --prepare --train --model CNNText --optim Adam --cuda --gpu 0 --text_var essay --target_var one_non_teacher_referred_donor_giving_100_plus --vocab_dir ../../data/vocab --vocab_data vocab_essay_one_non_teacher_referred_donor_giving_100_plus.data --model_dir ../../data/models --model_suffix essay_one_non_teacher_referred_donor_giving_100_plus --epochs 4 --batch_size 128 --learning_rate 0.001 --dropout 0.3 --weight_decay 0
+-------system-------
+On branch master
+Untracked files:
+	.fitconfig
+	Essay_Length_distribution.png
+	__pycache__/
+	essay_Length_distribution.png
+	logs/
+	run.sh
+	run1.log
+	run2.log
+	run_all.log
+	run_all.sh
+	run_all0.log
+	run_all0.sh
+	run_all1.log
+	run_all1.sh
+	run_all2.log
+	run_all2.sh
+	run_all3.sh
+	run_cnn.log
+	run_lstm.log
+	run_on_gpu1.sh
+	run_records.log
+	runtest.sh
+
+nothing added to commit but untracked files present
+
+

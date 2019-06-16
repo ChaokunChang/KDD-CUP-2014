@@ -7,6 +7,7 @@ import fitlog
 import numpy as np
 import pandas as pd
 import torch
+import matplotlib.pyplot as plt
 from torch.autograd import Variable
 from gensim.models import word2vec
 from gensim.test.utils import datapath, get_tmpfile
@@ -68,7 +69,7 @@ def parse_args():
                                 help='train batch size')
     train_settings.add_argument('--epochs', type=int, default=10,
                                 help='train epochs')
-    train_settings.add_argument('--patience', type=int, default=3,
+    train_settings.add_argument('--patience', type=int, default=2,
                                 help='patience of early stop')
 
     model_settings = parser.add_argument_group('model settings')
@@ -120,7 +121,8 @@ def prepare(args):
     data = TextData(data_src='all_data')
     text_var = args.text_var
     target_var = args.target_var
-    sizes = data.fetch_data(path=opj(args.data_dir,'essays_all_outcome.csv'),
+    print("Generateing {} - {}".format(text_var, target_var))
+    sizes = data.fetch_data(path=os.path.join(args.data_dir,'essays_all_outcome.csv'),
                             text_var=text_var,target_var=target_var,
                             subset_num=0, os_rate=1.0 )
     print("Data Sizes", sizes)
@@ -132,7 +134,7 @@ def prepare(args):
 
     print('Saving vocab(TextData)...')
     with open(os.path.join(args.vocab_dir,args.vocab_data ), 'wb') as fout:
-        pkl.dump(data, fout)
+        pickle.dump(data, fout)
     print('Done with preparing!')
 
 
@@ -339,7 +341,7 @@ def train(args):
         output.append(pred.cpu().data)
     output = torch.cat(output, 0).numpy()
     print(output.shape)
-    print("Predict Done. {} records".format(len(output)*args.batch_size))
+    print("Predict Done. {} records".format(len(output)))
     result_save_path = os.path.join(args.result_dir, args.model+"_"+args.model_suffix)
     with open(result_save_path+".pkl", 'wb') as f:
         pickle.dump(output, f)

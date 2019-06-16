@@ -2561,3 +2561,34 @@ target fields after batch(if batch size is 2):
 	target: (1)type:torch.Tensor (2)dtype:torch.int64, (3)shape:torch.Size([2]) 
 
 training epochs started 2019-06-14-09-54-52
+[34mAuto commit by fitlog[0m
+Running with args:Namespace(batch_size=128, cuda=True, data_dir='../../data', data_src='all_data', dropout=0.3, embed_size=128, epochs=10, gpu='1', hidden_size=128, learning_rate=0.001, log_path='./run_records.log', max_seq_len=500, min_count=10, model='CNNText', model_dir='../../data/models', model_suffix='oversampling', num_layers=2, optim='Adam', patience=2, predict=False, prepare=False, prepare_dir='../../data/prepare/', pretrain=False, pretrain_model='None', reload_model_name='best_LSTMText_accuracy_2019-06-14-04-01-48', result_dir='../../data/results/', show_data=False, target_var='is_exciting', text_var='essay', train=True, vocab_data='vocab_oversampling.data', vocab_dir='../../data/vocab', weight_decay=0.0)
+Checking the data files...
+(vocab_size,class_num,seq_len):(37380,2,1070)
+No pretrained model with be used.
+vocabsize:37380
+Using CNN Model.
+CNNText(
+  (embed): Embedding(
+    37380, 128
+    (dropout): Dropout(p=0.0)
+  )
+  (conv_pool): ConvMaxpool(
+    (convs): ModuleList(
+      (0): Conv1d(128, 3, kernel_size=(3,), stride=(1,), padding=(2,))
+      (1): Conv1d(128, 4, kernel_size=(4,), stride=(1,), padding=(2,))
+      (2): Conv1d(128, 5, kernel_size=(5,), stride=(1,), padding=(2,))
+    )
+  )
+  (dropout): Dropout(p=0.3)
+  (fc): Linear(in_features=12, out_features=2, bias=True)
+)
+train_size:538736 ; val_size:234618 ; test_size:44772
+Using Adam as optimizer.
+input fields after batch(if batch size is 2):
+	words: (1)type:torch.Tensor (2)dtype:torch.int64, (3)shape:torch.Size([2, 1070]) 
+	seq_len: (1)type:torch.Tensor (2)dtype:torch.int64, (3)shape:torch.Size([2]) 
+target fields after batch(if batch size is 2):
+	target: (1)type:torch.Tensor (2)dtype:torch.int64, (3)shape:torch.Size([2]) 
+
+training epochs started 2019-06-15-11-36-59

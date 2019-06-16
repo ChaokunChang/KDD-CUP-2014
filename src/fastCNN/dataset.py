@@ -107,7 +107,7 @@ class TextData():
         else:
             return words[:self.max_seq_len]
 
-    def fetch_csv(self, path,text_var="essay",target_var="is_exciting", subset_num=None,us_rate=None,os_rate=None):
+    def fetch_csv(self, path,text_var="essay",target="is_exciting", subset_num=None,us_rate=None,os_rate=None):
         """ 
         us_rate: under sampling rate
         os_rate: over sampling rate
@@ -117,8 +117,9 @@ class TextData():
         # text_vars=["title", "short_description", "need_statement", "essay"]
         text_vars = text_var  # only select the essay column
         target_var = "y"
-        df[target_var][ df["is_exciting"]=="t" ] = 1.0
-        df[target_var][ df["is_exciting"]!="t" ] = 0.0
+        df[target_var] = 0.0
+        df[target_var][ df[target]=="t" ] = 1.0
+        df[target_var][ df[target]!="t" ] = 0.0
         train_df = df[df['split'] == 'train']
         val_df = df[df['split'] == 'val']
         test_df = df[df['split'] == 'test']
@@ -131,8 +132,8 @@ class TextData():
             ros = RandomOverSampler(random_state=0)
         elif us_rate is not None:
             print("Under Sample mode")
-            train_df_t = train_df[df['is_exciting'] == "t"]
-            train_df_f = train_df[df['is_exciting'] == "f"]
+            train_df_t = train_df[df[target] == "t"]
+            train_df_f = train_df[df[target] == "f"]
             t_num = len(train_df_t)
             f_num = len(train_df_f)
             print("Raw train t:f = {}:{}".format(t_num,f_num))
@@ -144,8 +145,8 @@ class TextData():
             print("Balanced train: t:f = {}:{}".format(len(balanced_train_t),len(balanced_train_f) ))
             # print("Train 1.0:",len(train_df[train_df[target_var] == 1.0]))
 
-            val_df_t = val_df[df['is_exciting'] == "t"]
-            val_df_f = val_df[df['is_exciting'] == "f"]
+            val_df_t = val_df[df[target] == "t"]
+            val_df_f = val_df[df[target] == "f"]
             t_num = len(val_df_t)
             f_num = len(val_df_f)
             print("Raw val t:f = {}:{}".format(t_num,f_num))
@@ -243,10 +244,10 @@ class TextData():
         # self.train_set.apply(lambda x : class2target(x['class'],self.calss_num),new_field_name="target")
         # self.test_set.apply(lambda x : class2target(x['class'],self.calss_num),new_field_name="target")
 
-    def fetch_data(self, path,text_var="essay",target="is_exciting",subset_num=None,us_rate=None,os_rate=None):
+    def fetch_data(self, path,text_var="essay",target_var="is_exciting",subset_num=None,us_rate=None,os_rate=None):
         if self.data_src == "all_data":
             # Loading 20newsgroups data and tokenize.
-            self.fetch_csv(path,text_var,target,subset_num,us_rate,os_rate)
+            self.fetch_csv(path,text_var,target_var,subset_num,us_rate,os_rate)
         else:
             print("No legal data src type:{} ...".format(self.data_src))
             assert(0 == 1)
